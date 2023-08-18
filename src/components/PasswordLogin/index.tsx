@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 const schema = yup
   .object({
-    email: yup.string().email().required(),
+    email: yup.string().email('Not valid email').required('No email provided.'),
     password: yup
       .string()
       .required('No password provided.')

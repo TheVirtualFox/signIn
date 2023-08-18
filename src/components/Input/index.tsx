@@ -51,7 +51,7 @@ export const Input = <T extends FieldValues>({ label, register, name, errors, ..
         )}
       </div>
 
-      <span className={styles.errorCaption}>{error}</span>
+      <span className={styles.errorCaption}>{error?.toString()}</span>
     </div>
   );
 };

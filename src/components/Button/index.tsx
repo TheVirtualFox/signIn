@@ -6,6 +6,7 @@ type ButtonProps = {
   children?: ReactNode;
   icon?: ReactNode;
   variant?: 'outlined';
+  type?: 'submit' | 'reset' | 'button';
 } & InputHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({ icon, children, variant, ...inputProps }: ButtonProps) => {
