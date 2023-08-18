@@ -1,0 +1,11 @@
+.app {
+ min-height: 100%;
+ display: flex;
+ justify-content: center;
+}
+
+@media (min-width: 450px) {
+ .app {
+  align-items: center;
+ }
+}
