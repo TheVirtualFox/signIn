@@ -4,6 +4,9 @@ import { Button } from '../Button';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { toast, Toaster } from 'react-hot-toast';
+import { fetcher } from '../../utils/fetcher';
+import { useState } from 'react';
 
 const schema = yup
   .object({
@@ -25,10 +28,24 @@ export const PasswordLogin = () => {
     resolver: yupResolver(schema),
   });
 
-  const postLogin = () => {};
+  const [isLoading, setIsLoading] = useState(false);
+  const postLogin = async (loginForm: { email: string; password: string }) => {
+    toast.remove();
+    setIsLoading(true);
+    try {
+      const loginResult = await fetcher(loginForm);
+      toast.success(`Login success`);
+    } catch (err: Error) {
+      toast.error(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const isSubmitDisabled = isLoading || !!Object.entries(errors).length;
 
   return (
-    <form action="" className={styles.form} onSubmit={handleSubmit(postLogin)}>
+    <form noValidate={true} className={styles.form} onSubmit={handleSubmit(postLogin)}>
       <Input errors={errors} register={register} name="email" label="Email" placeholder="Email" type="email" />
       <Input
         errors={errors}
@@ -38,7 +55,7 @@ export const PasswordLogin = () => {
         placeholder="Password"
         type="password"
       />
-      <Button type="submit" className={styles.submitButton}>
+      <Button isLoading={isLoading} type="submit" className={styles.submitButton} disabled={isSubmitDisabled}>
         Sign In
       </Button>
     </form>

@@ -19,6 +19,7 @@
   --white: #fff;
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
+  --gray-300: #d1d5db;
   --gray-400: #9ca3af;
   --gray-900: #111827;
   --gray-950: #030712;
@@ -29,6 +30,7 @@
   --yellow-300: #fde047;
 
   --orange-500: #f97316;
+  --focus-color: rgba(0,123,173,.15);
 
   --gap-lg: 2.5rem;
   --gap-md: 1rem;
@@ -45,11 +47,7 @@ html {
 
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {

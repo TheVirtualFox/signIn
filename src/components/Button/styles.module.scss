@@ -1,0 +1,52 @@
+.button {
+    background: var(--blue-500);
+    color: white;
+    font-weight: bolder;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    //line-height: 2.9;
+    height: 4.25rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0 1rem;
+    outline: none;
+    transition: .2ms;
+
+    &:disabled {
+        background: var(--gray-300);
+        cursor: not-allowed;
+        &:focus, &:hover {
+            background: var(--gray-300);
+        }
+    }
+
+    &:hover {
+        background: var(--blue-700);
+    }
+
+    &:focus {
+        background: var(--blue-800);
+        box-shadow: 0 0 0 4px var(--focus-color);
+    }
+
+    &.outlinedMode {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        font-weight: 100;
+        background: none;
+        border: 1px solid var(--gray-400);
+        color: var(--gray-900);
+        &:hover {
+            box-shadow: inset 0 0 0 150px rgba(0,0,0,.1);
+        }
+    }
+
+    &.loadingMode {
+        cursor: progress;
+    }
+}

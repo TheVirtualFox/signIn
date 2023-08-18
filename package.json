@@ -9,7 +9,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "browserslist": ["cover 99.5%"],
+  "browserslist": [
+    "cover 99.5%"
+  ],
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.2.0",
@@ -17,6 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
+    "react-hot-toast": "^2.4.1",
     "yup": "^1.2.0"
   },
   "devDependencies": {
