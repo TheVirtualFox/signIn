@@ -4,9 +4,6 @@ import { Button } from '../Button';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { toast } from 'react-hot-toast';
-import { fetcher } from '../../utils';
-import { useState } from 'react';
 import { useLogin } from './useLogin';
 
 const schema = yup

@@ -4,14 +4,16 @@ import { fetcher } from '../../utils';
 
 export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const postLogin = async (loginForm: { email: string; password: string }) => {
+  const postLogin = async () => {
     toast.remove();
     setIsLoading(true);
     try {
-      await fetcher(loginForm);
+      await fetcher();
       toast.success(`Login success`);
-    } catch (err: Error) {
-      toast.error(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        toast.error((err as Error).message);
+      }
     } finally {
       setIsLoading(false);
     }
