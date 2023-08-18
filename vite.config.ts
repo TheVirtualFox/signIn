@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: 'https://thevirtualfox.github.io/signIn',
   plugins: [react()],
   css: {
     postcss: {
