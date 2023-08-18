@@ -1,7 +1,7 @@
 .loginForm {
     display: flex;
     background: var(--white);
-    padding: var(--gap-md);
+    padding: var(--gap-lg);
     margin: 0 auto;
     width: 100%;
     flex-direction: column;
@@ -14,6 +14,5 @@
     .loginForm {
         max-width: 35rem;
         border-radius: 0.5rem;
-        padding: var(--gap-lg);
     }
 }
