@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import { ReactNode } from 'react';
 
 type LineProps = {

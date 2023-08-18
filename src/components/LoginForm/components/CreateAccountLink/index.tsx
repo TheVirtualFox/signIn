@@ -1,7 +1,7 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 export const CreateAccountLink = () => (
-  <div className={styles.container}>
+  <div>
     <span>
       Don't have an account?{' '}
       <a href="/" className={styles.link}>

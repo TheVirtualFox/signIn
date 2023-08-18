@@ -5,6 +5,7 @@ import { ShowPasswordIcon } from './components/ShowPasswordIcon';
 import { FieldErrors, FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
 type ButtonProps<T extends FieldValues> = InputHTMLAttributes<HTMLInputElement> & {
+  isRequired?: boolean;
   register: UseFormRegister<T>;
   label: string;
   children?: ReactNode;
@@ -12,7 +13,14 @@ type ButtonProps<T extends FieldValues> = InputHTMLAttributes<HTMLInputElement> 
   errors: FieldErrors<T>;
 };
 
-export const Input = <T extends FieldValues>({ label, register, name, errors, ...inputProps }: ButtonProps<T>) => {
+export const Input = <T extends FieldValues>({
+  isRequired,
+  label,
+  register,
+  name,
+  errors,
+  ...inputProps
+}: ButtonProps<T>) => {
   const id = useId();
   const isPassword = inputProps.type === 'password';
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -39,6 +47,9 @@ export const Input = <T extends FieldValues>({ label, register, name, errors, ..
             id={id}
             type={isShowPassword ? 'text' : inputProps.type}
             className={styles.input}
+            aria-invalid={isError}
+            aria-errormessage={error?.toString()}
+            aria-required={isRequired}
           />
         </div>
 

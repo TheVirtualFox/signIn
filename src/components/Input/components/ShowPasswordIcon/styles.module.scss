@@ -8,8 +8,9 @@
     outline: none;
     border-radius: 0.5rem;
     border: 1px solid transparent;
-}
-.button:focus {
-    box-shadow: 0 0 0 1px #007bad;
-    border-color: #007bad;
+    cursor: pointer;
+    &:focus {
+        box-shadow: 0 0 0 1px #007bad;
+        border-color: #007bad;
+    }
 }

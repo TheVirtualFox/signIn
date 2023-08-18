@@ -1,5 +1,5 @@
 import { EyeSlashIcon, EyeIcon } from '@heroicons/react/24/solid';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import classNames from 'classnames';
 
 type ShowPasswordIconProps = {
@@ -14,7 +14,7 @@ export const ShowPasswordIcon = ({ isShowPassword, onClick, className }: ShowPas
       type="button"
       className={classNames(styles.button, className)}
       onClick={onClick}
-      aria-label="hide or show password"
+      aria-label={isShowPassword ? 'Show password' : 'Hide password'}
     >
       {isShowPassword ? <EyeIcon /> : <EyeSlashIcon />}
     </button>
