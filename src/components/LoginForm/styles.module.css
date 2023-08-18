@@ -7,11 +7,12 @@
     flex-direction: column;
     position: relative;
     gap: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0;
 }
 
 @media (min-width: 450px) {
     .loginForm {
         max-width: 35rem;
+        border-radius: 0.5rem;
     }
 }

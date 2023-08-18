@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, ReactNode, useId, useState } from 'react';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import classNames from 'classnames';
 import { ShowPasswordIcon } from './components/ShowPasswordIcon';
 import { FieldErrors, FieldValues, Path, UseFormRegister } from 'react-hook-form';
@@ -26,19 +26,22 @@ export const Input = <T extends FieldValues>({ label, register, name, errors, ..
   };
 
   return (
-    <div className={classNames(styles.inputWrapper, { [styles.password]: isPassword, [styles.error]: isError })}>
+    <div className={classNames(styles.container, { [styles.passwordMode]: isPassword, [styles.errorMode]: isError })}>
       <label htmlFor={id} className={styles.label}>
         {label}
       </label>
-      <div className={styles.inputContainer}>
-        <input
-          autoComplete="true"
-          {...inputProps}
-          {...register(name)}
-          id={id}
-          type={isShowPassword ? 'text' : inputProps.type}
-          className={styles.input}
-        />
+      <div className={styles.relative}>
+        <div className={styles.inputContainer}>
+          <input
+            autoComplete="true"
+            {...inputProps}
+            {...register(name)}
+            id={id}
+            type={isShowPassword ? 'text' : inputProps.type}
+            className={styles.input}
+          />
+        </div>
+
         {isPassword && (
           <ShowPasswordIcon
             className={styles.showPasswordIcon}
